@@ -1,5 +1,7 @@
 package com.viktor.innap.didemoapp.di
 
+import com.viktor.innap.didemoapp.main.MainViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.Koin
 import org.koin.core.module.Module
 import org.koin.dsl.ModuleDeclaration
@@ -11,22 +13,36 @@ object ModuleList {
 
     fun getMainModule() = module {
         factory { MainRepository(get()) }
+
+        viewModel { MainViewModel(get()) }
     }
 
     fun getHttpModule() = module {
-        single { DemoHttpService() }
+        single { DemoHttpService("") }
+    }
+
+
+    fun networkModuleByInteface() = module {
+        single<IDemoHtttpService> { DemoHttpService(" some base url") }
     }
 }
 
-class MainRepository(private val mainService: DemoHttpService) {
+
+class MainRepository(private val remoteService: DemoHttpService) {
+
     fun loginUser(username: String, password: String): String {
-        return mainService.loginUserRemote(username, password)
+        return remoteService.loginUserRemote(username, password)
     }
 }
 
 
-class DemoHttpService {
+class DemoHttpService(baseUrl: String) : IDemoHtttpService  {
     //returns token
-    fun loginUserRemote(username: String, password: String): String =
-        "bearer_otpqwkeowqekpmcopawqpiewqe"
+    override fun loginUserRemote(username: String, password: String): String =
+        "auth_token_102301132"
+}
+
+
+interface IDemoHtttpService {
+    fun loginUserRemote(username: String, password: String): String
 }

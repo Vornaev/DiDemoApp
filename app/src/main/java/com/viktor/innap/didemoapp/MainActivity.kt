@@ -1,5 +1,6 @@
 package com.viktor.innap.didemoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -10,7 +11,7 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainRepository: MainRepository = get()
+    private val mainRepository   : MainRepository = get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
             token.let {
                 Toast.makeText(this, "successfully login", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        demoKoinText.setOnClickListener {
+            startActivity(Intent(this, VIewModelDemoActivity::class.java))
         }
     }
 }
