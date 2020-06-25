@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/didemoapplibfiles" />
             <option value="$PROJECT_DIR$/internallibmodule" />
+            <option value="$PROJECT_DIR$/networkClient" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
