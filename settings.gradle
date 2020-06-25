@@ -1,5 +1,4 @@
 rootProject.name='DiDemoApp'
 include ':app'
-include ':lib'
-include ':didemotestintegration'
 include ':didemoapplibfiles'
+include ':internallibmodule'

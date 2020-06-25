@@ -12,8 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/didemoapplibfiles" />
-            <option value="$PROJECT_DIR$/didemotestintegration" />
-            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/internallibmodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
