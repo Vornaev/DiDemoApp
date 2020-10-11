@@ -2,7 +2,6 @@ package com.viktor
 
 import android.app.Application
 import com.viktor.innap.didemoapp.di.ModuleList
-import org.internal.lib.module.MediaUtilites.MediaInteractor
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
